@@ -1,0 +1,9 @@
+2024-12-03 23:03:31.192998-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "UUID '7930e65b-c2d7-44da-a5c6-54d6be94d558' (TASKS_COPY_3_0: ""ID"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TASKS_COPY_3_0"("ID", "INGREDIENTS", "MODE_PREPARE", "TITLE") OVERRIDING SYSTEM VALUE SELECT "ID", "INGREDIENTS", "MODE_PREPARE", "TITLE" FROM "PUBLIC"."TASKS" [22018-232]
+2024-12-03 23:04:19.057838-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "UUID '7930e65b-c2d7-44da-a5c6-54d6be94d558' (TASKS_COPY_3_0: ""ID"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TASKS_COPY_3_0"("ID", "INGREDIENTS", "MODE_PREPARE", "TITLE") OVERRIDING SYSTEM VALUE SELECT "ID", "INGREDIENTS", "MODE_PREPARE", "TITLE" FROM "PUBLIC"."TASKS" [22018-232]
+2024-12-03 23:05:34.982821-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TASKS" not found (this database is empty); SQL statement:
+insert into tasks (ingredients,mode_prepare,title,id) values (?,?,?,default) [42104-232]
