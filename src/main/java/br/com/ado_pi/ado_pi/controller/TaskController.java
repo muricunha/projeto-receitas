@@ -1,6 +1,8 @@
 package br.com.ado_pi.ado_pi.controller;
 
 import br.com.ado_pi.ado_pi.model.TaskModel;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -9,8 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@Controller
 @RestController
+@RequestMapping("/tasks")
 public class TaskController {
 
     private TaskService taskService;
@@ -19,9 +21,8 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-
     @PostMapping("/saveTask")
-    public ResponseEntity<TaskModel> addTask(@RequestBody TaskModel task) {
+    public ResponseEntity<TaskModel> addTask(@RequestBody @Valid TaskModel task) {
         TaskModel savedTask = taskService.addTask(task);
         return ResponseEntity.ok(savedTask);
     }
